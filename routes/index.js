@@ -19,4 +19,30 @@ router.get('/', function(req, res, next) {
   })
 });
 
+router.get('/create', function(req, res, next) {
+  res.render('blog-create');
+  
+  const post = new Post({
+    title: req.body.title,
+    body: req.body.content
+  });
+
+  post.save()
+  .then((doc) => {
+    console.log('Post Saved Successfully!', doc);
+    res.redirect('/blog');
+    // res.render('blog-create', {
+    //   blog_title: req.body.title, 
+    //   blog_content: req.body.content
+    // });
+  }).catch((err) => {
+    console.error(err);
+    next(new Error("Error saving post!"));
+  });
+
+});
+
+
+
+
 module.exports = router;

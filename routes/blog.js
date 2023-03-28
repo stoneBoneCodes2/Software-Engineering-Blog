@@ -34,7 +34,7 @@ router.get('/update/:id', async function(req, res, next){
 router.post('/update', async function(req, res, next) {
   const post = req.body;
   const filter = { _id: post.id };
-  const update = { title: post.title, body: post.body }
+  const update = { title: post.title, body: post.content }
   const docs = await Post.findOneAndUpdate(filter, update);
   //console.log(docs);
   //res.send(`Update ${post.title} - ${post.id}`);
