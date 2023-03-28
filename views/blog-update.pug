@@ -1,0 +1,19 @@
+extends layout
+
+block content
+    h1 Update this Post
+    form(method="POST" action="/blog/update")
+        input(type="hidden" name="id" value=post.id)
+        div
+            label Enter Title:
+            input(name="title" value=post.title)
+            br
+            br
+            br
+        div
+            label Enter Content:
+            textarea(name="content" rows="10" cols="100") #{post.body}
+            br
+            br
+        div
+            input(type="submit" value="Update Blog Post")

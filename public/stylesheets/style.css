@@ -1,0 +1,13 @@
+body {
+  padding: 50px;
+  font: 14px "Courier New";
+  background-color: #E5E4E2;
+}
+
+a {
+  color: #00B7FF;
+}
+
+label{
+  display: block;
+}

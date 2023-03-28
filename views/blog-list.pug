@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  h1 List of Blog Posts
+  ul
+  each post in posts
+
+    li #{post.title} &nbsp; 
+      a(href= "/blog/update/" + post.id) Update
+      |  
+      a(href= "/blog/delete/" + post.id style={color: 'red'}) Delete
+
+
+  h2 Create a New Post
+  form(method="POST" action="/blog/create")
+    label Enter Title:
+    input(name="title")
+    br
+    br
+    br
+    label Enter Content:
+    textarea(name="content" rows="10" cols="100")
+    br
+    br
+    input(type="submit" value="Submit Blog Post")
