@@ -1,6 +1,6 @@
 body {
   padding: 50px;
-  font: 14px "Courier New";
+  font: 18px "Courier New";
   background-color: #E5E4E2;
 }
 
@@ -11,3 +11,5 @@ a {
 label{
   display: block;
 }
+
+li {list-style-type: decimal;}

@@ -1,13 +1,31 @@
 extends layout
 
 block content
-  h1= "Welcome to My Node.js Blog!"
-  p Welcome to my personal Node.js journey! As a developer, I've been fascinated by the endless possibilities that Node.js offers for building modern and efficient applications. In this blog, I'll be sharing my experiences, insights, and practical tips for working with Node.js, as well as exploring its ecosystem and community. From the challenges I've faced to the exciting projects I've built, I'll be taking you along on my Node.js adventure. So join me as we embark on a journey of learning, discovery, and innovation in the world of Node.js.
-  |  
+  h1= "Welcome to My Software Engineering Blog!"
+  p Welcome to my software engineering blog, where I share my passion for creating innovative software solutions and exploring the latest trends in the industry. As a software engineer with years of experience, I believe that software development is not just about writing code, but also about designing and implementing solutions that address real-world problems and meet the needs of users.
+  p In this blog, I aim to provide valuable insights into the software development process, from the initial design phase to deployment and maintenance. Whether you are a seasoned software engineer or just starting out in the field, you will find useful tips and tricks, best practices, and industry news that will help you stay ahead of the curve.
+  p My goal is to create a community of like-minded professionals who share my passion for software engineering and are committed to delivering high-quality solutions. I encourage you to join me on this journey and engage in discussions, share your own experiences and insights, and learn from each other. Together, we can create a better software world.
+  br 
   p - Kartik Srikumar
+  br
+  br
+  h2 List of Blog Posts
+  ul
+  each post in posts
+    li
+      a(href= "/blog/update/" + post.id) #{post.title}
+      
+
+  br
   p 
-    | Click 
-    a(href='/blog') Here 
-    | To See All My Posts
+  | Click 
+  a(href='/blog') here
+  |  
+  to see all posts
 
-
+  br
+  p 
+  | Click 
+  a(href='/blog/create/') here
+  |  
+  to create a new post

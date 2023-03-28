@@ -68,7 +68,9 @@ router.post('/delete', async function(req, res, next) {
 
 
 router.post('/create', function(req, res, next) {
+  res.render('blog-create', {
 
+  });
   const post = new Post({
     title: req.body.title,
     body: req.body.content
