@@ -3,10 +3,6 @@ var router = express.Router();
 const Post = require('../models/post');
 
 /* GET home page. */
-// router.get('/', function(req, res, next) {
-//   res.render('index', { title: 'S.E. Blog' });
-// });
-
 router.get('/', function(req, res, next) {
   Post.find({}).then((posts) => {
     res.render('index', {
@@ -19,6 +15,7 @@ router.get('/', function(req, res, next) {
   })
 });
 
+//Route to create page
 router.get('/create', function(req, res, next) {
   res.render('blog-create');
   
@@ -31,14 +28,25 @@ router.get('/create', function(req, res, next) {
   .then((doc) => {
     console.log('Post Saved Successfully!', doc);
     res.redirect('/blog');
-    // res.render('blog-create', {
-    //   blog_title: req.body.title, 
-    //   blog_content: req.body.content
-    // });
   }).catch((err) => {
     console.error(err);
     next(new Error("Error saving post!"));
   });
+
+});
+
+//Route to 'View' page...TODO
+router.get('/viewOne/:id', async function(req, res, next){
+
+  try{
+    const post = await Post.findById(req.params.id);
+    res.render('blog-viewOne', {
+      post: post,
+    });
+  } catch(err){
+    console.error(err);
+    next(new Error("Error: Cannot retrieve this post!"));
+  }
 
 });
 
