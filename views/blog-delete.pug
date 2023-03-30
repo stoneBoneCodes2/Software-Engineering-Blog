@@ -1,6 +1,7 @@
 extends layout
 
 block content
+    img(src='/robot50.png' style= 'position:relative; top:-2px; left:10px;')
     h1 Delete this Post
     form(method="POST" action="/blog/delete")
         input(type="hidden" name="id" value=post.id)
